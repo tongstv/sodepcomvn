@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi, en">
+   <head>
+      <title>Kiểm tra đơn hàng</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <script src="../js/jquery.min.js"></script>
+      <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+      <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+      <link rel="stylesheet" href="../css/style.css">
+      <script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.confirm.min.js"></script>
+<link href="../css/bootstrap-editable.css" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<script src="../js/bootstrap-editable.min.js"></script>
+<script src="../js/scriptlibs.js"></script>
+<script src="../js/admin.js"></script>
+
+<link rel="stylesheet" href="../css/chosen.css">
+<script src="../js/chosen.js"></script>
+
+
+      {if isset($smarty.request.dlid)}
+      <input type="hidden" name="dlid" value="{$smarty.request.dlid}" />
+      {/if}
+     
+      {if isset($error)}
+      <div class="alert alert-danger">{$error}</div>
+      {/if}
+      {if isset($alert)}
+      <div class="alert alert-success">{$alert}</div>
+      {/if}
+   
+
+
+
+      <form action="index.php?ajax={$smarty.get.ajax}" class="form-inline" method="POST">
+
+    <div class="form-group form-group-sm">
+<label class="control-label">Số sim đặt mua:</label>
+<input name="simcard" class="form-control" style="max-width: 300px;" />
+<button class="btn btn-success">Check</button>
+    </div>
+   
+
+   
+      </form>
+    
+{if isset($simcard) AND $simcard!=''}
+    <br />
+    <table class="table table-hover table-condensed">
+    
+    <thead>
+    <tr>
+    <th class="active" colspan="2">Thông tin vận đơn</th>
+    </tr>
+    </thead>
+    <tr>
+    
+        <td><strong>Số sim:</strong></td>
+        <td>{$simcard}</td>
+    </tr>
+    <tr>
+        <td><strong>Ngày chuyển:</strong></td>
+        <td>{$date_send|date_format: 'd/m/Y'}</td>
+    </tr>
+    {if $name}
+    <tr>
+        <td><strong>Họ tên khách hàng:</strong></td>
+        <td>{$name}</td>
+    </tr>
+    {/if}
+    </table>
+    
+    </table>
+{/if}
+    </body>
+    </html>

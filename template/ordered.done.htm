@@ -1,0 +1,86 @@
+
+<div class="panel-fix">
+  <div class="panel-heading">
+    <h4 class="panel-title">Đặt hàng thành công</h4>
+  </div>
+  <div class="panel-body">
+   <table class="table table-condensed table-bordered" >
+   <thead>
+   <tr>
+    <th class="active text-center col-md-1">STT</th>
+     <th class="active text-center">Số sim</th>
+      <th class="active text-center">Giá tiền</th>
+     
+   </tr>
+   </thead>
+   
+   {section name=d loop=$data}
+   {$row=$data[d]}
+   <tr>
+   
+   <td class="center">
+   
+
+   {$smarty.section.d.index+1}</td>
+   <td class="text-center">{$row.sosim}</td>
+   <td class="text-center ">{($row.giatien)|number_format} vnđ <span> ( {$doctien} )</span></td>
+
+
+ 
+   </tr>
+   {/section}
+
+    <tr>
+    <td colspan="2" class="text-center font-b">Tổng tiền</td>
+    <td colspan="1" class="text-center"> <span id="total" class="font-b">{if isset($tt)}{($tt)|number_format} VNĐ</span> <strong class="doifont">( {$tongtien} )</strong>{/if}</td>
+
+    </tr>
+  
+   </table>
+   
+   
+   <table class="table table-bordered">
+   <thead>
+    <tr>
+        <th class="active" colspan="2">Thông tin giao hàng</th>
+    </tr>
+   </thead>
+   <tr>
+   <td>Họ và tên:</td>
+   <td>{$fullname}</td>
+   </tr>
+   
+      <tr>
+   <td>Địa chỉ:</td>
+   <td>{$address} - {$city}</td>
+   </tr>
+   
+         <tr>
+   <td>Điện thoại:</td>
+   <td>{$phone}</td>
+   </tr>
+   
+   {if isset($note)}
+            <tr>
+   <td>Ghi chú:</td>
+   <td>{$note}</td>
+   </tr>
+   
+   {/if}
+   </table>
+   
+
+   
+  </div>
+</div>
+
+   {if isset($dathangxong)}
+   <div class="panel-fix">
+     <div class="panel-heading">
+       <h4 class="panel-title">{$dathangxong.title}</h4>
+     </div>
+     <div class="panel-body">
+      {$dathangxong.detail}
+     </div>
+   </div>
+   {/if}

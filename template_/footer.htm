@@ -1,0 +1,276 @@
+﻿</div>
+<div id="right">
+{if isset($dienthoai) AND $dienthoai.status ==1}
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h6 class="panel-title"><i class="glyphicon glyphicon-phone-alt"></i> {$dienthoai.title}</h6>
+  </div>
+  <div class="panel-body">
+   {$dienthoai.detail}
+  </div>
+</div>
+{/if}
+
+
+<div class="panel panel-primary hidden-xs">
+  <div class="panel-heading">
+    <h2 class="panel-title"><i class="glyphicon glyphicon-list"></i> Chọn theo đầu số</h2>
+  </div>
+
+    <ul class="list-group">
+    
+  <a class="list-group-item" href="dau-so/Mobifome-090"> Đầu số đẹp 090 (Mobifone)</a>
+  <a class="list-group-item" href="dau-so/Vinaphone-091"> Đầu số đẹp 091 (Vinaphone)</a>
+  <a class="list-group-item" href="dau-so/Vietnamobile-092"> Đầu số đẹp 092 (Vietnamobile)</a>
+  <a class="list-group-item" href="dau-so/Mobifone-093"> Đầu số đẹp 093 (Mobifone)</a>
+  <a class="list-group-item" href="dau-so/Vinaphone-094"> Đầu số đẹp 094 (Vinaphone)</a>
+  <a class="list-group-item" href="dau-so/Viettel-096"> Đầu số đẹp 096 (Viettel)</a>
+  <a class="list-group-item" href="dau-so/Viettel-097"> Đầu số đẹp 097 (Viettel)</a>
+  <a class="list-group-item" href="dau-so/Viettel-098"> Đầu số đẹp 098 (Viettel)</a>
+    <a class="list-group-item" href="dau-so/Gmobile-099"> Đầu số đẹp 099 (Gmobile)</a>
+    </ul>
+ 
+</div>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2 class="panel-title">
+    <i class="glyphicon glyphicon-star-empty"></i> 
+    {$khuyenmai.title}</h2>
+  </div>
+  <div class="panel-body mp0">
+  <div class="table-responsive" style="max-height: 500px; overflow: auto;">
+   {$khuyenmai.detail}
+   </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="panel panel-primary hidden-xs">
+  <div class="panel-heading">
+    <h3 class="panel-title"> <i class="glyphicon glyphicon-shopping-cart"></i> Đơn đặt hàng</h3>
+  </div>
+  <div class="panel-body" style="margin: 0; padding: 0;">
+   <div id="order" class="wow slideInUp"></div>
+  </div>
+</div>
+
+
+<div class="panel panel-primary hidden-xs">
+  <div class="panel-heading">
+    <h3 class="panel-title"> <i class="glyphicon glyphicon-th-list"></i> Tin khuyến mãi</h3>
+  </div>
+  <div class="panel-body" id="km">
+    {$groupNew}
+  </div>
+</div>
+
+           {for $i=0 to 10}
+               
+               
+               {if isset($boxr{$i}.title) AND $boxr{$i}.status==1}
+               
+                    <div class="panel panel-primary hidden-xs" id="box{$i}">
+                  <div class="panel-heading">
+                     <h6 class="panel-title"><i class="glyphicon glyphicon-star"></i> {$boxr{$i}.title}</h6>
+                  </div>
+                  <div class="panel-body">
+                     {$boxr{$i}.detail}
+                  </div>
+               </div>
+               
+               {/if}
+               
+               {/for}
+               
+               
+</div>
+
+
+</div>
+
+<div class="row">
+
+
+<div class="row new-footer bg-default">
+
+{$newfooter}
+
+<div class="col-md-3 col4 font-14 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s" >
+<h4><strong>{$connect.title}</strong></h4>
+<hr />
+
+
+<ul class="share">
+<li>	<a href="#" class="facebook wow fadeInRight wowhover" data-effect="flip" data-wow-duration="1s" data-wow-delay=".2s " title="Chi lên trong Facebook"></a></li>
+<li>	<a href="http://twitter.com/share?text={$des}&url={$share.link}" target="_blank" class="twitter wow fadeInRight" data-wow-duration="1s" data-wow-delay=".4s " title="Chi sẻ lên Twitter"></a></li>
+<li>	<a href="https://plus.google.com/share?url={$share.link}" target="_blank" class="plusone wow fadeInRight" data-wow-duration="1s" data-wow-delay=".6s " title="Chia sẻ lên Google+"></a></li>
+</ul>
+
+</div>
+<div class="clearfix"></div>
+
+<div>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+
+<div class="copy">
+<div class="container">
+
+{$copy.detail}
+</div>
+</div>
+
+
+<a class="glyphicon scrollToTop wowhover" data-effect="fadeInRight" href="javascript://" rel="nofollow"></a>
+<a class="glyphicon scrollTobottom hidden-xs" href="javascript://" rel="nofollow"></a>
+<script src="{$thisdomain}/{$template}/js/java.js" type="text/javascript"></script>
+
+
+
+
+<span class="designby">Version 2.0 mobile support - Thiết kế bởi: www.stv.vn</span>
+<div id="c-mask" class="c-mask"></div>
+
+<div class="navbar-fixed-bottom navbar-default visible-xs" style="min-height: 40px;  padding-left: 10px; padding-right: 10px;">
+<div class="pull-left">
+{if isset($mobilehotline)}{$mobilehotline.detail}{else}Mã Trang mobilehotline{/if}
+</div>
+<div class="pull-right">
+<a href="/?desktop=1" class="pull-right"><i class="stv-display"></i><b> Xem bản Desktop</b></a>
+</div>
+</div>
+{$body}
+{if $desktop > 0}
+<a style="font-size: 30px; margin-bottom: 10px;"  href="/?desktop=2" class="pull-left"><i class="stv-mobile"></i><b> Xem bản Mobile</b></a>
+{/if}
+
+
+
+
+<script>
+
+  
+$(document).ready(function(){
+  
+
+
+  $("head").append('<link rel="stylesheet" href="{$thisdomain}/stvfont/style.css">');
+    
+    $(".facebook").click(function(){
+        
+        window.open('http://www.facebook.com/sharer.php?s=100&p[url]={$share.link}&p[images][0]={$share.img}&p[title]={$share.title}&p[summary]=', 'sharer', 'toolbar=0,status=0,width=548,height=425');
+        return false;
+        
+    });
+    w=$(document).width();
+    
+    if(w >= 1024)
+    {
+      
+      $("a.dropdown-toggle").each(function(index){
+    
+    href=$(this).attr('href');
+    text=$(this).text();
+    
+    $(this).attr('href','Sim-So-Dep-'+text.trim()+'.html');
+
+    
+   });
+   
+   $("a.dropdown-toggle").click(function(){
+    
+    window.location=$(this).attr('href');
+   })   
+    }
+    
+  
+
+  
+  
+
+    $("button[name='submit']").click(function(){
+    sim=$("#sim").val();
+ 
+  
+    if(sim.length==10 || sim.length==11)
+    {
+         window.location="/"+sim+".html";
+            return false;
+        
+    }
+
+})
+
+
+})
+</script>
+{if isset($banner_trai)}
+<div class="slide_left">{$banner_trai.detail}</div>
+<div class="slide_right">{$banner_phai.detail}</div>
+
+<style>
+.slide_left, .slide_right
+{
+    display: none;
+}
+
+@media (min-width:1025px)
+{
+    {
+        
+    }
+    .slide_left, .slide_right
+{
+    display: block;
+    
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 3px #ccc;
+    
+    position: fixed;
+    top :38px;
+    
+    width: 150px;
+    min-height: 600px;
+    z-index:  -1;
+}
+.slide_left
+{
+    left: 0;
+    margin-left: 10px;
+}
+
+.slide_right
+{
+    right: 0px;
+    float: right;
+    margin-right: 10px;
+}
+}
+</style>
+
+{/if}
+<script type="text/javascript" src="/apps/js/wow.min.js"></script>
+<script>
+ 
+
+new WOW().init();
+</script>
+
+</body>
+</html>

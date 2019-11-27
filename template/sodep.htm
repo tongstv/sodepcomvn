@@ -1,0 +1,81 @@
+{include file='search_box.htm'}
+<div class="panel-fix">
+  <div class="panel-heading">
+    <h1 class="panel-title">{if isset($name)}{$name}{/if}     <a target="_blank" href="{$print_url}" class="pull-right glyphicon glyphicon-print"></a></h1>
+
+  </div>
+  <div class="panel-body">
+  
+<table class="table table-hover table-condensed">
+
+<thead>
+<tr>
+
+<th class="active center hidden-xs">STT</th>
+<th class="active">
+
+Số sim
+
+</th>
+<th class="active sortprice">Giá tiền <span class="glyphicon"> <a class="pricetoogle" href="javascript://">
+{if !isset($smarty.session.toggleprice)}
+<span class="glyphicon-arrow-up"></span><span class="glyphicon-arrow-down"></span>
+{else if $smarty.session.toggleprice=='ASC'}
+<span class="glyphicon-arrow-up red"></span>
+{else}
+<span class="glyphicon-arrow-down red"></span>
+{/if}
+
+</a>
+
+
+</span></th>
+<th class="active">Nhà mạng</th>
+<th class="active hidden-xs text-center">Thể loại</th>
+<th class="active hidden-xs">Đặt mua</th>
+<th class="active">Giỏ hàng</th>
+<th class="active visible-xs"></th>
+</tr>
+</thead>
+
+
+{include file='tbody.htm'}
+
+</tr>
+<tr>
+<td colspan="7" class="text-right"><ul class="pagination pagination-sm">{$paging}</ul></td>
+</tr>
+</table>
+
+ </div>
+</div>
+
+{if isset($seo.page_title)}
+<div class="panel panel-fix6">
+  <div class="panel-heading">
+    <h2 class="panel-title">{$seo.page_title}</h2>
+  </div>
+  <div class="panel-body">
+  <div style="max-height: 400px; overflow: auto;">
+    {$seo.page_detail}
+    </div>
+  </div>
+</div>
+<style>
+
+.panel-fix6 h1 {
+    background: white url(/style/images/panel-icon.png) no-repeat left;
+    padding-left: 30px;
+    color: #ff5400;
+    font-weight: bold;
+    line-height: 30px;
+    margin: 0;
+    line-height: 35px;
+    border-bottom: 1px solid #cccccc;
+}
+.panel-fix6 .panel-body h1, .panel-fix6 .panel-body h2,.panel-fix6 .panel-body h3,.panel-fix6 .panel-body h4,.panel-fix6 .panel-body h5
+{
+    font-size: 14px;
+}
+</style>
+{/if}

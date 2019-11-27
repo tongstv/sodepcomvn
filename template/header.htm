@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<title>{if isset($title)}{$title}{/if}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta charset="utf-8">
+
+<meta name="description" content="{if isset($des)}{$des}{/if}">
+<meta name="keywords" content="{if isset($keyword)} {$keyword} {/if}">
+
+<base href="{$thisdomain}">
+
+{if isset($smarty.get.do) AND $smarty.get.do!='ordered'}
+
+{/if}
+
+{$header}
+
+<link rel="canonical" href="{$canonical}" />
+<link rel="stylesheet" href="{$thisdomain}/style/css.css" media="all">
+<link rel="icon" type="image/png" href="{$thisdomain}/images/favicon.png" />
+<style>
+body{
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+}
+</style>
+
+
+</head>
+
+<body>
+
+{include file='slide.menu.htm'}
+
+<div class="container-fluid">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog"  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+     
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="container_top hidden-xs" style="background-image: url(/style/images/bg_menu_top.png); min-height: 26px; padding: 0 !important;">
+<div class="container-fix">
+<a href="{$thisdomain}" rel="nofollow">
+<i class="glyphicon glyphicon-home"></i> Trang chủ</a>| <a href="/p/ho-tro" rel="nofollow">Hỗ trợ</a> | <a href="/tintuc" rel="nofollow">Tin tức</a> | <a href="/p/hinh-thuc-thanh-toan" rel="nofollow">Thanh toán</a> | <a  href="/p/lien-he" rel="nofollow">Liên hệ</a>
+<span class="cart">
+<a href="javascript://" class="addcart" rel="nofollow">
+<i class="glyphicon glyphicon-shopping-cart font-12"></i> Giỏ hàng <span class="red strong" id="cart">{if isset($cartcount)}{$cartcount}{/if}</span>
+</a> | <a rel="nofollow"  href="index.php?ajax=cod" title="kiểm tra đơn hàng" data-width="60%" data-height="400" class="frame font-12">Kiểm tra đơn hàng</a>
+</span>
+</div>
+</div>
+
+
+
+
+
+<div class="clearfix"></div>
+<div class="container-fix container-fix2">
+
+<div class="hidden-xs">
+{include file='menu.htm'}
+</div>
+
+<div class="row">
+<div id="left">
+

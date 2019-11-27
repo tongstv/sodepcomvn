@@ -1,0 +1,123 @@
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2019-02-17 12:46:33
+         compiled from "template/search_box.htm" */ ?>
+<?php /*%%SmartyHeaderCode:15152224535c68f539aad757-80775349%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '383245ecc0e073cfa9005ee3b89594f237c7803d' => 
+    array (
+      0 => 'template/search_box.htm',
+      1 => 1543334492,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '15152224535c68f539aad757-80775349',
+  'function' => 
+  array (
+  ),
+  'variables' => 
+  array (
+    'thiskey' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_5c68f539ab7e56_30446405',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5c68f539ab7e56_30446405')) {function content_5c68f539ab7e56_30446405($_smarty_tpl) {?>
+<div id="search_box">
+   <form id="search" action="index.php" class="form-horizontal" style="padding: 20px; margin-top: 10px;">
+   
+   <h2 class="panel-title search-top text-center" style="margin-top: -24px;"><strong class="sbg">TÌM SIM SỐ ĐẸP</strong></h2>
+   <div class="clearfix"></div>
+   <input name="do" value="search" type="hidden"> 
+   <div class="col-md-9 col-md-offset-3"  style="margin-top: 15px;">
+   <div class="form-group">
+   <div class="col-md-4" id="smangx">
+   <div class="form-group">
+   <select name="network" class="form-control input-sm" style="font-weight: bold;">
+   <option value="0">Chọn mạng </option>
+    <option value="1">Viettel</option>
+     <option value="2">Mobifone</option>
+      <option value="3">Vinaphone</option>
+       <option value="4">Vietnamobile</option>
+       <option value="5">Gmobile</option>
+   </select>
+   </div>
+   </div>
+   <div class="col-md-4 col-xs-6" style="padding: 0;">
+   <div class="input-group">
+   <div class="input-group-addon font-12"><strong> Giá từ:</strong></div>
+   <input name="giatu" type="tel"  class="form-control price input-sm  font-b text-right" placeholder="100,000"  />
+   </div>
+   </div>
+   <div class="col-md-4 col-xs-6" style="padding: 0;">
+   <div class="input-group ">
+   <div class="input-group-addon font-12"><strong>Đến:</strong></div>
+   <input name="den"  type="tel" class="form-control input-sm price  font-b text-right" placeholder="1,000,000"  />
+   </div>
+   </div>
+   </div>
+ </div>
+
+
+  <div class="form-group">
+  <div class="col-md-9 col-md-offset-3" id="sx">
+  
+  <div class="input-group">
+     <input  onclick="this.value=''" name="sim" required="" type="tel" id="sim" value="<?php if (isset($_smarty_tpl->tpl_vars['thiskey']->value)) {
+echo $_smarty_tpl->tpl_vars['thiskey']->value;
+}?>" class="form-control pull-left popover-dismiss input-lg" placeholder="Nhập số sim bạn cần tìm" data-container="body" data-toggle="popover" data-placement="bottom" data-content=" - Sử dụng dấu <span class='red'>x</span> đại điện cho 1 số và dấu <span class='red'>*</span> đại điện cho một chuỗi số. <br /> + Để tìm sim bắt đầu bằng 098, quý khách nhập vào 098*<br /> + Để tìm sim kết thúc bằng 888, quý khách nhập vào *888<br /> + Để tìm sim bắt đầu bằng 098 và kết thúc bằng 888, nhập vào 098*888<br /> + Để tìm sim bên trong có số 888, nhập vào 888<br /> + Để tìm sim bắt đầu bằng 098 và kết thúc bằng 808, 818, 828, 838, 848, 858, 868, 878, 888, 898 nhập vào 098*8x8<br /> " title="Hướng dẫn tìm kiếm sim"  />
+<div class="input-group-btn"> <button class="btn btn-success font-b font-b btn-lg" > <i class="glyphicon glyphicon-search"></i> Tìm kiếm</button></div>
+  </div>
+
+ 
+  
+  </div>
+  </div>
+
+<div class="form-group text-center" style="padding: 0; margin-top: -10px;"> <strong class="font-12">Hot key:</strong> <span class="hotkey"><a href="#" class="hotkey">0912*68</a>, <a href="#" class="hotkey">090*888</a>, <a href="#" class="hotkey">0913*</a>, <a href="#" class="hotkey">*6688</a>, <a href="#" class="hotkey">01234*</a>, <a href="#" class="hotkey">09*99x99</a>   </span></div>
+   <div class="form-group text-right">
+   <a style="margin-top: 32px; margin-right: 10px; margin-bottom: 30px;" href="javascript://" onclick="$('.fullsearch').fadeToggle();" class="font-12"><strong style="color: red;
+    margin-top: -20px;
+    position: absolute;
+    margin-left: -80px;">Tìm nâng cao</strong></a>
+   </div>
+   
+   <div class="fullsearch text-center font-12 form-group" style="display: none;">
+   <div class="form-group"  style="font-size: 11px;">
+   <span>Dãy số không gồm:</span>&nbsp;
+				<input name="n[]" value="1" type="checkbox"><span> 1 </span>
+				<input name="n[]" value="2" type="checkbox"><span> 2 </span>
+				<input name="n[]" value="3" type="checkbox"><span> 3 </span>
+				<input name="n[]" value="4" type="checkbox"><span> 4 </span>
+			<input name="n[]" value="5" type="checkbox"><span> 5 </span>
+				<input name="n[]" value="6" type="checkbox"><span> 6 </span>
+				<input name="n[]" value="7" type="checkbox"><span> 7 </span>
+				<input name="n[]" value="8" type="checkbox"><span> 8 </span>
+				<input name="n[]" value="9" type="checkbox"><span> 9 </span>
+            </div>    
+               
+                <div class="form-group">
+                <div class="col-xs-6 col-md-5 col-md-offset-1">
+                <div class="input-group">
+                <div class="input-group-addon font-12">Tổng điểm:</div>
+                <input name="tongdiem"  type="number" min="1" max="81" class="form-control input-sm" placeholder=" < 81" />
+                </div>
+                </div>
+                <div class="col-xs-6 col-md-5">
+                      <div class="input-group">
+                <div class="input-group-addon font-12">Tổng Nút:</div>
+                <input name="tongnut"  type="number" min="1" max="10" class="form-control input-sm" placeholder=" 1 -10" />
+                </div>
+                </div>
+                </div>
+               
+   </div>
+
+   <input type="hidden" name="submit" value="true" />
+   </form>
+
+</div>
+
+
+<?php }} ?>

@@ -1,0 +1,74 @@
+{include file='search_box.htm'}
+<div class="panel-fix6">
+  <div class="panel-heading">
+    <h1 class="panel-title">{if isset($page_title)}{$page_title}{/if}</h1>
+  </div>
+  <div class="panel-body">
+  <div class="table-condensed">
+   {if isset($page_detail)} {$page_detail} {/if}
+   </div>
+  </div>
+</div>
+
+{if isset($more)}
+<div class="panel-fix">
+  <div class="panel-heading">
+    <h4 class="panel-title">Tin liên quan</h4>
+  </div>
+  <div class="panel-body">
+   <ul>
+ 
+    {section name=d loop=$more}
+    {$row=$more[d]}
+   <li>
+    <a href="/p/{$row.page_url}">{$row.page_title}</a>
+    </li>
+    {/section} 
+   
+ 
+    
+  
+    </ul>
+  </div>
+</div>
+{/if}
+
+
+<div class="panel-fix page">
+  <div class="panel-heading">
+    <h4 class="panel-title">TIN MỚI NHẤT</h4>
+  </div>
+  <div class="panel-body">
+   <ul>
+ 
+    {section name=d loop=$new}
+    {$row=$new[d]}
+   <li>
+    <a href="/p/{$row.page_url}">{$row.page_title}</a>
+    </li>
+    {/section} 
+   
+ 
+    
+  
+    </ul>
+  </div>
+</div>
+
+<style>
+
+.panel-fix6 h1 {
+    background: white url(/style/images/panel-icon.png) no-repeat left;
+    padding-left: 30px;
+    color: #ff5400;
+    font-weight: bold;
+    line-height: 30px;
+    margin: 0;
+    line-height: 35px;
+    border-bottom: 1px solid #cccccc;
+}
+.panel-fix6 .panel-body h1, .panel-fix6 .panel-body h2,.panel-fix6 .panel-body h3,.panel-fix6 .panel-body h4,.panel-fix6 .panel-body h5
+{
+    font-size: 14px;
+}
+</style>

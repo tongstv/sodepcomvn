@@ -1,0 +1,36 @@
+
+
+<nav class="navbar-default" role="navigation">
+   
+    <div class="navbar-header">
+  
+    
+<a href="{$thisdomain}" class="visible-xs" title="{$title}"></a>
+      
+  
+    
+    </div>
+
+  
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+    {$menu} 
+      </ul>
+ <form class="navbar-form navbar-right" style="display: none;" role="search">
+    <input type="hidden" name="do" value="search" />
+          <div class="input-group">
+              <input type="text" class="form-control" placeholder="Nhập số bạn cần tìm vd: *1986" name="sim">
+            <div class="input-group-btn">
+                <button class="btn btn-primary" name="submit" type="submit"><i class="glyphicon glyphicon-search"></i><strong>Tìm sim</strong></button>
+                </div>
+          </div>
+</form>
+        <ul class="nav navbar-nav navbar-right hidden">
+        <li><a class="ajax" href="index.php?ajax=giaodien">Xem thử các giao diện</a></li>
+        </ul>
+    </div>
+
+    
+</nav>
+
+<div class="clearfix"></div>

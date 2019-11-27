@@ -1,0 +1,482 @@
+ 
+ 
+ 
+      <div>
+         
+         
+         <strong>Chọn theo đầu số:     </strong>
+         &nbsp;
+         
+       
+         
+          {$dau = "098"}
+         {for $i=1 to 9}
+         
+         <a href="/dau-so-{$dau}{$i}.html">{$dau}{$i}</a>
+         , &nbsp;
+         {/for} 
+         
+          {$dau = "097"}
+         {for $i=1 to 9}
+         
+         <a href="/dau-so-{$dau}{$i}.html">{$dau}{$i}</a>
+         , &nbsp;
+         {/for} 
+         
+         
+          {$dau = "096"}
+         {for $i=1 to 9}
+         
+         <a href="/dau-so-{$dau}{$i}.html">{$dau}{$i}</a>
+         , &nbsp;
+         {/for} 
+         
+         
+            {$dau = "091"}
+         {for $i=1 to 9}
+         
+         <a href="/dau-so-{$dau}{$i}.html">{$dau}{$i}</a>
+         , &nbsp;
+         {/for} 
+         
+             {$dau = "090"}
+         {for $i=1 to 9}
+         
+         <a href="/dau-so-{$dau}{$i}.html">{$dau}{$i}</a>
+         , &nbsp;
+         {/for} 
+   
+   
+          {$dau = "092"}
+         {for $i=1 to 9}
+         
+         <a href="/dau-so-{$dau}{$i}.html">{$dau}{$i}</a>
+         , &nbsp;
+         {/for} 
+                {$dau = "099"}
+         {for $i=3 to 7}
+         
+         <a href="/dau-so-{$dau}{$i}.html">{$dau}{$i}</a>
+         , &nbsp;
+         {/for} 
+    
+         </div>
+         
+         
+ 
+ </div>
+            {if isset($smarty.get.do) AND $smarty.get.do=='tintuc'}
+            <div id="right">
+               <div class="panel panel-fix">
+                  <div class="panel-heading">
+                     <h2 class="panel-title">BÀI VIẾT CHỌN LỌC</h2>
+                  </div>
+                  <div class="panel-body">
+                     <ul class="newtop">
+                        {section name=d loop=$newtop}
+                        {$row=$newtop[d]}
+                        <li>
+                           <a href="/p/{$row.page_url}">{$row.page_title}</a>
+                        </li>
+                        {/section} 
+                     </ul>
+                  </div>
+               </div>
+               <div class="panel panel-fix">
+                  <div class="panel-heading">
+                     <h2 class="panel-title">BÀI VIẾT LIÊN QUAN</h2>
+                  </div>
+                  <div class="panel-body">
+                     <ul class="newtop">
+                        {section name=s loop=$newmore}
+                        {$row=$newmore[s]}
+                        <li>
+                           <a href="/p/{$row.page_url}">{$row.page_title}</a>
+                        </li>
+                        {/section} 
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            {else}
+            <div   id="right">
+              
+               {if $dienthoai.status ==1}
+               <div class="panel hidden-xs">
+                  
+                  <div class="panel-body mp0">
+                     {$dienthoai.detail}
+                  </div>
+               </div>
+               {/if}
+           
+          
+                
+             
+                
+           
+           
+           
+               <div class="panel-fix2">
+                  <div class="panel-heading">
+                     <h2 class="panel-title"> Sim số đẹp theo loại</h2>
+                  </div>
+                  <div class="panel-body">
+                   
+                     
+                     
+            
+                         <ul class="start-number">  <li class="simicon20"><a href="sim-tu-quy.html">Sim Tứ Quý</a></li>  <li class="simicon20"><a href="sim-luc-quy.html">Sim Lục Quý</a></li>  <li class="simicon20"><a href="sim-ngu-quy.html">Sim Ngũ Quý</a></li>  <li class="simicon20"><a href="sim-loc-phat.html">Sim Lộc Phát</a></li>  <li class="simicon20"><a href="sim-than-tai.html">Sim Thần Tài</a></li>  <li class="simicon20"><a href="sim-ong-dia.html">Sim ông địa</a></li>  <li class="simicon20"><a href="sim-tien-don.html">Sim tiến đơn</a></li>  <li class="simicon20"><a href="sim-tien-doi.html">Sim Tiến đôi</a></li>  <li class="simicon20"><a href="sim-taxi-hai.html">Sim Taxi 2</a></li>  <li class="simicon20"><a href="sim-taxi-ba.html">Sim Taxi 3</a></li>  <li class="simicon20"><a href="sim-taxi-bon.html">Sim Taxi 4</a></li>  <li class="simicon20"><a href="sim-lap.html">Sim Lặp</a></li>  <li class="simicon20"><a href="sim-kep.html">Sim kép</a></li>  <li class="simicon20"><a href="sim-doi.html">Sim đối</a></li>  <li class="simicon20"><a href="sim-dao.html">Sim Đảo</a></li>  <li class="simicon20"><a href="sim-ganh.html">Sim gánh</a></li>  <li class="simicon20"><a href="sim-dac-biet.html">Sim Đặc Biệt</a></li>  <li class="simicon20"><a href="sim-nam-sinh.html">Sim Năm Sinh</a></li>  <li class="simicon20"><a href="dau-so-co.html">Sim đầu số cổ</a></li>  <li class="simicon20"><a href="tam-hoa-don.html">Sim tam Hoa Đơn</a></li>  <li class="simicon20"><a href="tam-hoa-kep.html">Sim tam Hoa Kép</a></li>  <li class="simicon20"><a href="sim-ngay-thang-nam-sinh.html">Năm sinh dd/mm/YY</a></li></ul>
+              
+ </div>
+               </div>
+               
+             
+               <div class="panel-fix2">
+                  <div class="panel-heading">
+                     <h2 class="panel-title"> Sim số đẹp theo đầu số</h2>
+                  </div>
+                  <div class="panel-body">
+                     <ul class="start-number">
+                        <li class="simicon20"><a href="dau-so/Mobifome-090"><strong>Sim số đẹp 090</strong> ( Mobifone )</a></li>
+                        <li class="simicon20"><a href="dau-so/Vinaphone-091"><strong>Sim số đẹp 091</strong> ( Vinaphone )</a></li>
+                        <li class="simicon20"><a href="dau-so/Vietnamobile-092"><strong>Sim số đẹp 092</strong> ( Vietnamobile )</a></li>
+                        <li class="simicon20"><a href="dau-so/Mobifone-093"><strong>Sim số đẹp 093</strong> ( Mobifone )</a></li>
+                        <li class="simicon20"><a href="dau-so/Vinaphone-094"><strong>Sim số đẹp 094</strong> ( Vinaphone )</a></li>
+                        <li class="simicon20"><a href="dau-so/Viettel-096"><strong>Sim số đẹp 096</strong> ( Viettel )</a></li>
+                        <li class="simicon20"><a href="dau-so/Viettel-097"><strong>Sim số đẹp 097 </strong>( Viettel )</a></li>
+                        <li class="simicon20"><a href="dau-so/Viettel-098"><strong>Sim số đẹp 098</strong> ( Viettel )</a></li>
+                        <li class="simicon20"><a href="dau-so/Gmobile-099"><strong>Sim số đẹp 099 </strong>( Gmobile )</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="panel-fix2">
+                  <div class="panel-heading">
+                     <h2 class="panel-title"> Sim Số Đẹp Theo Phong Thuỷ</h2>
+                  </div>
+                  <div class="panel-body" style="background-image: url('../style/images/phongthuy.png'); height: 180px;">
+                     <form method="GET" action="index.php">
+                        <input name="do" value="search" type="hidden" style="color: white;" />
+                        <div class="form-group">
+                           <div class="input-group">
+                              <div class="input-group-addon" style="background-color: #76a6ff; color: white;"><strong>Tổng nút</strong></div>
+                              <input name="tongnut" class="form-control input-sm" type="number" min="1" max="10" placeholder="Tổng nút 1-10">
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <div class="input-group">
+                              <div class="input-group-addon" style="background-color: #76a6ff; color: white;"><strong>Tổng điểm</strong></div>
+                              <input name="tongdiem" type="number" min="1" max="81" class="form-control input-sm" placeholder="Tổng điểm < 81" >
+                           </div>
+                        </div>
+                        <div class="row form-group" style="font-size: 11px; font-weight: normal;">
+                           
+                           <div class="col-xs-12 text-center margin-top">
+                              <div class="line"></div>
+                                   
+                              <button class="btn" name="submit" value="true" style="background-color: #aa8c53;color: white; font-weight: bold;">Tìm kiếm</button>
+                           </div>
+                  </div>
+                     </form>
+                    
+                  </div>
+                  <div class="panel-fix2 hidden">
+                     <div class="panel-heading">
+                        <h2 class="panel-title"> Sim Số Đẹp Theo Năm Sinh</h2>
+                     </div>
+                     <div class="panel-body">
+                        <form method="GET" action="index.php">
+                           <input name="do" value="search" type="hidden" />
+                           <div class="form-group">
+                              <label class="font-13">Chọn ngày để tìm sim phù hợp</label>
+                              <input name="date"  class="form-control input-sm datepicker" placeholder="dd/mm/yyyy" type="text">
+                           </div>
+                           <div class="form-group">
+                              <div class="col-xs-12 text-center">
+                                 <label class="control-label font-12"><input name="dtp" checked="checked" value="0" type="radio"> Tất cả</label> <label class="font-12"><input name="dtp" value="2" type="radio"> m/d/y</label> <label class="font-12"><input name="dtp" value="1" type="radio"> 19xx</label>
+                              </div>
+                              <div class="col-xs-12 text-center margin-top">
+                                 <div class="line"></div>
+                                 <input name="submit" value="true" type="hidden" />
+                                 <button class="btn btn-sm btn-warning">Tìm kiếm</button>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+                  <div class="panel-fix2 hidden-xs">
+                     <div class="panel-heading">
+                        <h2 class="panel-title">Các đơn đặt hàng sim số đẹp </h2>
+                     </div>
+                     <div class="panel-body mp0">
+                        <div id="order"></div>
+                     </div>
+                  </div>
+                 
+                  
+                  
+                    <div class="panel-fix2 hidden-xs">
+                     <div class="panel-heading">
+                        <h3 class="panel-title"> Tin tức sim số đẹp</h3>
+                     </div>
+                     <div class="panel-body" id="km">
+                        
+                        <ul id="tintuc">
+                        
+                        {section name=xx loop=$tintuc}
+                        {$row=$tintuc[xx]}
+                      
+                        <li>
+                        <div class="row" style="border-bottom: 1px solid #ccc;">
+                                             
+                        
+                           <div class="pull-right col-md-12" style="padding: 3px;">  <a href="/p/{$row.page_url}">{$row.page_title}</a></div>
+                        </div>
+                        
+                      
+                        
+                  
+                      </li>
+                      
+                        {/section}
+                        
+                        </ul>
+                  
+                        
+                     </div>
+                  </div>
+                  
+                  
+                  
+                  
+               </div>
+            </div>
+            {/if}
+         
+             </div>
+              </div>
+             <div class="row" style="background: #3E5B99; clear: both; margin-top: 40px;">
+        
+            <div class="container-fix" style="background:  #3E5B99;" id="xfooter">
+            {$newfooter}
+            <div class="col-md-3">
+               <div class="col4" style="text-align: left; padding-left: 5px;">
+                  <h4 class="panel-title" style="margin-left: 0;">
+                  
+                  {$connect.title}</h4>
+                  <br />
+                  
+                  
+                
+         
+                  <div style="text-align: center;    margin-top: -20px;"><img alt="Mua sim số đẹp trên facebook" src="/data/facebook.png" style="height:45px; width:45px"><img alt="Mua sim số đẹp trên twitter" src="/data/twitter.png" style="height:45px; width:45px"><img alt="Mua sim số đẹp trên google plus" src="/data/googleplus.png" style="height:45px; width:45px"><img alt="Mua sim số đẹp trên youtube" src="/data/youtube.png" style="height:45px; width:45px"></div>
+                  {$connect.detail}
+               </div>
+               
+               
+               
+            </div>
+            
+            
+           
+         
+            </div>
+         </div>
+         
+       
+   
+         <div class="footer" style="clear: both;">
+         <div style="background: none;" class="container-fix">
+            {$copy.detail}
+            <span class="designby">Thiết kế bởi: www.stv.vn</span>
+            </div>
+         </div>
+     
+      <a class="scrollToTop" href="javascript://"></a>
+      <a class="scrollTobottom" href="javascript://"></a>
+      
+      
+
+
+
+      {if $smarty.get.do!='ordered'}
+      <script src="/apps/js/jquery.min.js"></script>
+      {/if}
+      <script src="/js/bootstrap.min.js?v=1"></script>
+
+      <script src="{$thisdomain}/js/scriptlibs.js"></script>
+      <script src="{$thisdomain}/js/script.min.js?v=2"></script>
+
+  
+        <script>
+        
+      
+        $(document).ready(function(){
+              if($(window).width() < 1024)
+{
+    $(".mega-menu").removeClass('mega-menu');
+             $(".dropdown").unbind();
+             
+             
+             
+            }
+            
+        })
+        
+        
+       
+        </script>
+        {literal}
+
+{/literal}      
+
+
+<div class="mobile-ctv" onclick="simphongthuyHotLine()"></div>
+<div id="mobile-ctv-hotline" class="mobile-ctv-hotline" style="display: none;">
+    <h3 class="box-title">
+    <span class="icon-sp">
+        <span class="text">Hỗ Trợ Khách Hàng</span>
+    </span>
+    </h3>
+    <div class="box-support">
+        
+        <div class="list-hotline">
+        
+            <table>
+                <tbody><tr>
+                    <td class="left"><img src="/img/icon-sp-2.png" alt="icon sp 2"></td>
+                    <td class="right">
+                    
+                            {if isset($mobile_hotline)}
+                            {$mobile_hotline}
+                            {else}
+                               <a href="tel:0944.66.8888">0944.66.8888</a>
+                        <a href="tel:0944.66.9999">0944.66.9999</a>
+                        
+                     
+                            {/if}
+                            
+                     
+                       
+                    </td>
+                </tr>
+            </tbody></table>
+
+                </div>
+    </div>
+</div>
+      
+
+      {literal}
+      <noscript id="style">
+#tintuc
+                        {
+                            padding: 0;
+                            list-style: none;
+                            margin: 0;
+                        }
+                        #tintuc a
+                        {
+                            font-size: 12px;
+                            padding-left: 3px;
+                            padding-top: 0;
+                        }
+                              #tintuc img
+                              {
+                                margin-top: 5px;
+                              }
+      .label-success {
+    background-color: #f5f5f5;
+    border-color: gold;
+    color: red;
+}
+ .giacu i
+ {
+    color: #3c5998 !important;
+ }
+ .giamoi
+ {
+    color: #ff7c26 !important;
+ }
+ @media (max-width:767px)
+ {
+ 
+    .simicon20
+    {
+        width: 49%;
+        display: inline-block !important;
+        overflow: hidden;
+    }
+ }
+ 
+      .mobile-ctv{position:fixed;left:20px;bottom:20px;width:64px;height:64px;background:url("/img/phone_w.png") center no-repeat #f6001d;border-radius:50%;cursor:pointer;}
+.box-title{background:#ad0909;color:#FFFFFF;font-weight:bold;padding:4px 0;border-radius:8px 8px 0 0;font-size:13px;text-align:center;position:relative;  margin-top: -0px}
+.box-title .text{text-transform:uppercase; }
+.box-title > span{padding-top:10px;padding-bottom:10px;padding-left:36px;display:inline-block;vertical-align:middle;}
+.box-title .icon-sp{background:url("/img/icon-sp.png") left no-repeat;}
+.box-support{text-align:center;font-size:14px;}
+.box-support .icon-sp-hotline{text-align:center;display:block;}
+.box-support .list-hotline table{width:100%;margin-bottom:10px;}
+.box-support .list-hotline table .left{vertical-align:middle;border-right:1px solid #DDDDDD;width:60px;}
+.box-support .list-hotline table .right{text-align:left;padding:0 15px;}
+.box-support .list-hotline a{font-weight:bold;color:black;font-size:18px;display:block;padding:3px 0;}
+.box-support .list-hotline .gopy{font-size:0.82em;color:red;}
+.mobile-ctv-hotline{position:fixed;left:20px;bottom:88px;background:#FFFFFF;box-shadow:0 5px 30px rgba(0,0,0,.16);display:none;border-radius:8px;z-index:99;overflow:hidden;}
+
+@media only screen and (min-device-width :320px) and (max-device-width :736px){
+.box-title{border-radius:0;font-size:16px;}
+.mobile-ctv-hotline .box-title{font-size:14px;}
+}
+    .s-top
+    {
+        display:none;
+    }
+    .search-top
+    {
+        padding-bottom: 10px;
+    }
+   
+}
+ #search_box
+    {
+        margin-top: 10px;
+    }
+      </noscript>
+      
+      
+      <script>
+
+
+var css = document.getElementById('style').innerHTML;
+      
+head = document.head || document.getElementsByTagName('head')[0],
+style = document.createElement('style');
+
+style.type = 'text/css';
+if (style.styleSheet){
+  style.styleSheet.cssText = css;
+} else {
+  style.appendChild(document.createTextNode(css));
+}
+
+head.appendChild(style);
+
+
+      function simphongthuyHotLine()
+{
+     var x = document.getElementsByClassName("mobile-ctv-hotline")[0];
+     
+  
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+     
+     
+}
+      </script>
+      {/literal}
+    
+   </body>
+</html>

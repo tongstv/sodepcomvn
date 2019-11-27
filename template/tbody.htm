@@ -1,0 +1,13 @@
+{section name=d loop=$data}
+{$row=$data[d]}
+<tr>
+<td class="center hidden-xs">{$row.stt}</td>
+<td><a class="sim" href="{$thisdomain}/{$row.sim2}" title="{$row.sim1}"><strong>{$row.sim1}</strong></a></td>
+<td class="text-center"><strong class="bfix gia font-12">{($row.giaban*1000000)|number_format}</strong></td>
+<td  class=" text-center"><span class="network n{$row.mang}"></span></td>
+<td  class="hidden-xs text-center"><a href="{$row.loailink}">{$row.loai}</a></td>
+
+<td class=" text-center"><a rel="nofollow" href="{$thisdomain}/{$row.sim2}" class="btn btn-sm btn-success dfix">Đặt mua</a></td>
+<td class="center hidden-xs"><a data-toggle="tooltip" title="Thêm {$row.sim1} vào giỏ hàng" href="javascript://" class="addcart " data-sim="{$row.sim2}" data-gia="{$row.giaban}"><i class="cartbuy"></i></a></td>
+</tr>
+{/section}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+			{if isset($title)}{$title}{/if}
+		</title>
+{if $desktop > 0}
+
+<meta name="viewport" content="width=1024">
+<style>
+width: 970px !important;  
+</style>
+{else}
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+{/if}
+		<meta http-equiv="Cache-control" content="public, max-age=86400">
+		<meta name="description" content="{if isset($des)}{$des}{/if}">
+		<meta name="keywords" content="{if isset($keyword)} {$keyword} {/if}">
+		<meta name="author" content="{$thisdomain|replace:'http://'}">
+         <meta name="robots" content="index, follow">
+         <link rel="alternate" href="{$thisdomain}{$smarty.server.REQUEST_URI|regex_replace:'/\?page=([0-9]*)/':''}" hreflang="vi-vn"/>
+         <meta name="revisit" content="1 days" />
+<meta name="language" content="vi-VN" />
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+
+
+         <link rel="shortcut icon" href="/data/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/data/favicon.ico" type="image/x-icon">
+
+<meta property="og:locale" content="vi_VN">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{if isset($title)}{$title}{/if}">
+<meta property="og:description" content="{if isset($des)}{$des}{/if}">
+<meta property="og:site_name" content="{$thisdomain|replace:'http://'}">
+<meta property="og:image" content="{$thisdomain}/data/fb.jpg">
+
+		<base href="{$thisdomain}">
+	
+          <!--[if lt IE 8]>
+          <link rel="stylesheet" href="https://cache.stv.vn/stvfont/ie7/ie7.css">
+          <![endif]-->
+        {$header}
+       <link href="{$thisdomain}/{$template}/css/css.php" rel="stylesheet" media="all">
+
+	</head>
+	<body>
+
+       
+
+		<div class="container-fluid">
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid tophotline hidden-xs">
+        <div class="container">
+      <div class="pull-left wow fadeInRight">       {if isset($date)}<i class="glyphicon glyphicon-calendar"></i> Hôm nay: {$date}{/if}</div>
+
+			<div class="cart wow fadeInLeft" >
+				<a href="javascript://" class="addcart hidden-xs">
+				<i class="glyphicon glyphicon-shopping-cart font-12 hidden-xs"></i> Giỏ hàng <span class="hidden-xs badge" id="cart">{if isset($cartcount)}{$cartcount}{/if}</span>
+				</a>
+
+			</div>
+            </div>
+		</div>
+		<div class="clearfix">
+		</div>
+		<div class="container">
+		
+			<div class="row">
+            	
+        <div class="banner" style="vertical-align:top;">
+       
+        {if isset($banner)}{$banner.detail}{/if}
+       
+        
+        </div>
+        
+                	<div class="clearfix">
+		</div>
+        <div id="custom-bootstrap-menu" class="navbar-default " role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+             <div id="mtop" class="visible-xs">
+       <a class="leftmenu pull-left glyphicon glyphicon-list" style="color: white; font-size: 20px;"></a>
+
+       
+    
+        <a href="/"> <i class="glyphicon glyphicon-home"></i> Trang chủ</a>
+        <a href="/p/gioi-thieu">Giới thiệu</a>
+        <a href="/p/lien-he">Liên hệ</a>
+        </div>
+        <style>
+        #mtop a
+        {
+             float: left;
+            
+             padding: 5px 10px;
+             color: white;
+        }
+        @media (max-width: 320px)
+        {
+          #mtop a
+        {
+             float: left;
+             color: #F8972E;
+            
+             padding: 5px 5px;
+             font-size: 14px;
+        }
+        }
+        </style> 
+          
+     
+            <button style="background: none; border: 0;" type="button" class="pull-right visible-xs" data-toggle="collapse" data-target=".navbar-menubuilder">
+         <i href="#" class="glyphicon glyphicon-list" style="color: white; font-size: 20px; margin-top: 7px;"></i>
+       
+            </button>
+            
+        </div>
+        <div>
+      
+        
+        </div>
+        <div class="collapse navbar-collapse navbar-menubuilder">
+            <ul class="nav navbar-nav navbar-left">
+
+           
+                           {$top_menu}
+            </ul>
+        </div>
+    </div>
+</div>
+	<div class="clearfix">
+		</div>
+            	<div  id="left">
+                
+                <div class="panel panel-primary" id="leftmenu">
+                  <div class="panel-heading hidden-xs">
+                    <h2 class="panel-title"><i class="glyphicon glyphicon-list"></i> Tìm sim theo các mạng</h2>
+                  </div>
+                
+                 	{include file=$theme.menu}
+                 
+                </div>
+                
+                
+                <div class="panel panel-primary hidden-xs">
+                  <div class="panel-heading">
+                    <h2 class="panel-title"><i class="glyphicon glyphicon-list"></i> Tìm sim theo giá tiền</h2>
+                  </div>
+                 
+                    <div class="list-group"><a class="list-group-item" href="/index.php?do=search&amp;network=0&amp;giatu=100%2C000%2C000&amp;den=100%2C000%2C000%2C000&amp;sim=0*&amp;tongdiem=&amp;tongnut=&amp;submit=true">Từ 100Triệu trở lên</a><a class="list-group-item" href="/index.php?do=search&amp;network=0&amp;giatu=50%2C000%2C000&amp;den=100%2C000%2C000&amp;sim=0*&amp;tongdiem=&amp;tongnut=&amp;submit=true">Từ 50Triệu đến 100Triệu</a><a class="list-group-item" href="/index.php?do=search&amp;network=0&amp;giatu=20%2C000%2C000&amp;den=50%2C000%2C000&amp;sim=0*&amp;tongdiem=&amp;tongnut=&amp;submit=true">Từ 20Triệu đến 50Triệu</a><a class="list-group-item" href="/index.php?do=search&amp;network=0&amp;giatu=10%2C000%2C000&amp;den=20%2C000%2C000&amp;sim=0*&amp;tongdiem=&amp;tongnut=&amp;submit=true">Từ 10Triệu đến 20Triệu</a><a class="list-group-item" href="/index.php?do=search&amp;network=0&amp;giatu=5%2C000%2C000&amp;den=10%2C000%2C000&amp;sim=0*&amp;tongdiem=&amp;tongnut=&amp;submit=true">Từ 5Triệu đến 10Triệu</a><a class="list-group-item" href="/index.php?do=search&amp;network=0&amp;giatu=2%2C000%2C000&amp;den=5%2C000%2C000&amp;sim=0*&amp;tongdiem=&amp;tongnut=&amp;submit=true">Từ 2Triệu đến 5Triệu</a><a class="list-group-item" href="/index.php?do=search&amp;network=0&amp;giatu=1%2C000%2C000&amp;den=2%2C000%2C000&amp;sim=0*&amp;tongdiem=&amp;tongnut=&amp;submit=true">Từ 1Triệu đến 2Triệu</a><a class="list-group-item" href="/index.php?do=search&amp;network=0&amp;giatu=500%2C000&amp;den=1%2C000%2C000&amp;sim=0*&amp;tongdiem=&amp;tongnut=&amp;submit=true">Từ 500,000Đ đến 1Triệu</a><a class="list-group-item" href="/index.php?do=search&amp;network=0&amp;giatu=&amp;den=500%2C000&amp;sim=0*&amp;tongdiem=&amp;tongnut=&amp;submit=true">Từ 500,000Đ trở xuống</a></div>
+                  
+                </div>
+                
+                
+                          <div class="panel panel-primary hidden-xs">
+                  <div class="panel-heading">
+                    <h2 class="panel-title"><i class="glyphicon glyphicon-list"></i> Tìm sim theo thể loại</h2>
+                  </div>
+                 <div class="list-group">{$menuloai}</div>
+                </div>
+                
+                  <div class="panel panel-primary hidden-xs">
+                  <div class="panel-heading">
+                    <h2 class="panel-title">Tìm sim phong thủy</h2>
+                  </div>
+                  <div class="panel-body">
+                    <form method="GET" action="index.php">
+  <input name="do" value="search" type="hidden" />
+				<div class="form-group">
+					<label>Tổng nút</label>
+					<input name="tongnut" class="form-control input-sm" placeholder="Tổng nút 1-10" type="text">
+				</div>
+				<div class="form-group">
+					<label>Tổng điểm</label>
+					<input name="tongdiem" class="form-control input-sm" placeholder="Tổng điểm < 81" type="text">
+				</div>
+				<div class="row form-group" style="font-size: 11px; font-weight: normal;">
+					<div class="col-xs-12 text-center">
+						<label><input name="type" checked="checked" value="0" type="radio"> Tất cả</label> 	<label><input name="type" value="09" type="radio"> 10 Số</label> <label><input name="type" value="01" type="radio"> 11 Số</label> 
+					</div>
+					<div class="col-xs-12 text-center margin-top"><input class="btn btn-primary btn-sm" value="Tìm sim" type="submit"></div>
+				</div>
+                <input type="hidden" name="submit" value="true" />
+			</form>
+
+                  </div>
+                </div>
+                
+                
+                 <div class="panel panel-primary hidden-xs">
+                  <div class="panel-heading">
+                    <h2 class="panel-title"><i class="glyphicon glyphicon-search"></i> Tìm sim ngày tháng năm sinh</h2>
+                  </div>
+                  <div class="panel-body">
+                       <form method="GET" action="index.php">
+   <input name="do" value="search" type="hidden" />
+				<div class="form-group">
+					<label>Chọn ngày</label>
+					<input name="date" type="text" class="form-control input-sm datepicker" placeholder="dd/mm/yyyy" type="text">
+				</div>
+				<div class="row form-group">
+					<div class="col-xs-12 text-center">
+						<label> <input name="dtp" checked="checked" value="0" type="radio"> Tất cả</label> <label> <input name="dtp" value="2" type="radio"> m/d/y</label> <label> <input name="dtp" value="1" type="radio"> 19xx</label> 
+					</div>
+					<div class="col-xs-12 text-center margin-top"><input class="btn btn-primary btn-sm" value="Tìm sim" type="submit"></div>
+				</div>
+                <input name="submit" value="true" type="hidden" />
+			</form>
+                  </div>
+                </div>
+{for $x=0 to 10}
+               
+               
+               {if isset($boxl{$x}.title) AND $boxl{$x}.status ==1}
+               
+                    <div class="panel panel-primary hidden-xs" id="box{$i}">
+                  <div class="panel-heading">
+                     <h6 class="panel-title"><i class="glyphicon glyphicon-star"></i> {$boxl{$x}.title}</h6>
+                  </div>
+                  <div class="panel-body">
+                     {$boxl{$x}.detail}
+                  </div>
+               </div>
+               
+               {/if}
+               
+               {/for}
+              
+
+
+
+
+                </div>
+				<div class="" id="main">

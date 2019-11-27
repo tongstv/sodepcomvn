@@ -1,0 +1,81 @@
+<html>
+<head>
+
+<link href="{$thisdomain}/css/css.php" rel="stylesheet"  media="screen">
+<title>Sim Nhà</title>
+</head>
+<body>
+<div style="width: 60%;margin: 0 auto;">
+{include file='hieu_box.htm'}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title">{if isset($name)}{$name}{/if} <a target="_blank" href="?{$smarty.server.QUERY_STRING|replace:"do":"ajax"}&print=true" class="pull-right glyphicon glyphicon-print"></a></h2>
+  </div>
+  <div class="panel-body">
+  
+<table class="table table-hover table-condensed">
+
+<thead>
+<tr>
+
+<th class="active center hidden-xs">STT</th>
+<th class="active">
+
+Số sim
+
+
+</th>
+<th class="active sortprice">Giá tiền <span class="glyphicon"> <a class="pricetoogle" href="javascript://">
+{if !isset($smarty.session.toggleprice)}
+<span class="glyphicon-arrow-up"></span><span class="glyphicon-arrow-down"></span>
+{else if $smarty.session.toggleprice=='ASC'}
+<span class="glyphicon-arrow-up"></span>
+{else}
+<span class="glyphicon-arrow-down"></span>
+{/if}
+
+</a>
+
+
+</span></th>
+<th class="active hidden-xs">Mạng di dộng</th>
+
+<th class="active hidden-xs">Mua</th>
+<th class="active hidden-xs">Giỏ hàng</th>
+<th class="active visible-xs"></th>
+</tr>
+</thead>
+
+{section name=d loop=$data}
+{$row=$data[d]}
+<tr>
+<td class="center hidden-xs">{$row.stt}</td>
+<td><a href="{$thisdomain}/{$row.sim2}.html" title="{$row.sim1}"><strong>{$row.sim1}</strong></a></td>
+<td>{($row.giaban*1000000)|number_format}</td>
+<td  class="hidden-xs"><span class="network n{$row.mang}"></span></td>
+
+<td class="hidden-xs"><a href="{$thisdomain}/{$row.sim2}.html" class="btn btn-sm btn-success">Đặt mua</a></td>
+<td class="hidden-xs text-center"><a data-toggle="tooltip" title="Thêm {$row.sim1} vào giỏ hàng" href="javascript://" class="addcart" data-sim="{$row.sim2}" data-gia="{$row.giaban}"><i class="glyphicon glyphicon-shopping-cart"></i></a></td>
+
+</tr>
+{/section}
+
+</tr>
+<tr>
+<td colspan="6" class="text-right"><ul class="pagination pagination-sm">{$paging}</ul></td>
+</tr>
+</table>
+
+ </div>
+</div>
+</div>
+
+<a class="scrollToTop" href="javascript://"></a>
+<a class="scrollTobottom" href="javascript://"></a>
+<script async src="{$thisdomain}/js/jquery.min.js"></script>
+<script async src="{$thisdomain}/js/bootstrap-datepicker.js"></script>
+<script async  src="{$thisdomain}/js/scriptlibs.js"></script>
+<script async src="{$thisdomain}/js/script.min.js"></script>
+
+</body>
+</html>

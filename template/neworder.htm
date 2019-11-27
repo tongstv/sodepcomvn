@@ -1,0 +1,30 @@
+<div class="list-group">
+
+
+
+{section name=d loop=$data}
+{$row=$data[d]}
+<div class="donhang">
+<strong class="red font-13 text-center">Số sim: {$row.sosim}</strong>
+<br />
+<span class="font-11 text-center">Thời gian đặt sim:
+{$row.date_order|date_format: 'H:i:s d/m/Y'}</span>
+<br />
+<strong style="color: #000000; text-align: center;" class="font-12 text-center">Khách đặt sim: {$row.fullname}</strong>
+<br />
+</div>
+<div class="clearfix"></div>
+
+
+
+{/section}
+</div>
+
+
+
+
+
+
+
+
+

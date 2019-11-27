@@ -1,0 +1,126 @@
+
+<div class="panel panel-success">
+
+    <h3 class="panel-title search-top text-center">
+    
+    <img src="images/timbg.png" />
+    </h3>
+
+  <div class="panel-body">
+   
+   <form id="search" action="index.php">
+   <input name="ajax" value="hieu" type="hidden">
+   <div class="row">
+     <span class="line"></span>
+      <div class="col-md-2">
+   <img src="images/searchsim.png" class="hidden-xs" style="opacity: 0.7; float: right;"  />
+   </div>
+   
+   <div class="col-md-10 text-center">
+
+   <div class="col-md-4">
+
+   <select name="network" class="form-control input-sm">
+   <option value="0">Chọn mạng di động</option>
+    <option value="1">Viettel</option>
+     <option value="2">Mobifone</option>
+      <option value="3">Vinaphone</option>
+       <option value="4">Vietnamobile</option>
+       <option value="5">Gmobile</option>
+   </select>
+   </div>
+   <div class="col-md-4">
+   
+   <div class="input-group">
+   <div class="input-group-addon font-12"> Giá từ:</div>
+  
+   
+   <input name="giatu" class="form-control input-sm price" placeholder="100,000" />
+   </div>
+   </div>
+   <div class="col-md-4">
+      
+   <div class="input-group">
+   <div class="input-group-addon font-12">Đến:</div>
+  
+   
+   <input name="den" class="form-control input-sm price" placeholder="1,000,000" />
+   </div>
+
+   </div>
+ 
+  
+         <div class="col-md-10">
+  <span class="line"></span>
+  <span class="line"></span>
+  <div class="col-md-10">
+   <input onclick="this.value=''" name="sim" id="sim" value="{if isset($thiskey)}{$thiskey}{/if}" class="form-control pull-left popover-dismiss" placeholder="Nhập số sim bạn cần tìm" data-container="body" data-toggle="popover" data-placement="bottom" data-content=" - Sử dụng dấu <span class='red'>x</span> đại điện cho 1 số và dấu <span class='red'>*</span> đại điện cho một chuỗi số. <br /> + Để tìm sim bắt đầu bằng 098, quý khách nhập vào 098*<br /> + Để tìm sim kết thúc bằng 888, quý khách nhập vào *888<br /> + Để tìm sim bắt đầu bằng 098 và kết thúc bằng 888, nhập vào 098*888<br /> + Để tìm sim bên trong có số 888, nhập vào 888<br /> + Để tìm sim bắt đầu bằng 098 và kết thúc bằng 808, 818, 828, 838, 848, 858, 868, 878, 888, 898 nhập vào 098*8x8<br /> " title="Hướng dẫn tìm kiếm sim"  />
+  </div>
+  <div class="col-md-1 col-xs-12 text-center">
+  
+  <button class="searchbuttom"></button>
+</div>
+   
+   
+   </div>
+   </div>
+   
+   </div>
+   
+
+   <div class="row">
+
+   <div class="col-md-5 col-md-offset-4 col-xs-12"> <strong class="red font-12">Hot key:</strong> <span class="hotkey"><a href="0912*68" class="hotkey">0912*68</a>, <a href="090*888" class="hotkey">090*888</a>, <a href="0913*" class="hotkey">0913*</a>, <a href="*6688" class="hotkey">*6688</a> </span></div>
+    <a href="javascript://" onclick="$('.fullsearch').fadeToggle();" class="red font-12 pull-left"><strong>Tìm nâng cao</strong></a>
+   
+   </div>
+   
+   <div class="fullsearch col-md-offset-3 font-12" style="display: none;">
+   <span class="line"></span>
+   Dãy số không gồm:
+				<input name="n[]" value="1" type="checkbox"><span> 1 </span>
+				<input name="n[]" value="2" type="checkbox"><span> 2 </span>
+				<input name="n[]" value="3" type="checkbox"><span> 3 </span>
+				<input name="n[]" value="4" type="checkbox"><span> 4 </span>
+			<input name="n[]" value="5" type="checkbox"><span> 5 </span>
+				<input name="n[]" value="6" type="checkbox"><span> 6 </span>
+				<input name="n[]" value="7" type="checkbox"><span> 7 </span>
+				<input name="n[]" value="8" type="checkbox"><span> 8 </span>
+				<input name="n[]" value="9" type="checkbox"><span> 9 </span>
+                
+                <br />
+                <div class="form-inline">
+                <span class="line"></span>
+                <div class="input-group">
+                <div class="input-group-addon font-12">Tổng điểm:</div>
+                <input name="tongdiem" maxlength="2" class="form-control input-sm" placeholder=" < 81" />
+                </div>
+                
+                      <div class="input-group">
+                <div class="input-group-addon font-12">Tổng Nút:</div>
+                <input name="tongnut" maxlength="2" class="form-control input-sm" placeholder=" 1 -10" />
+                </div>
+                
+                </div>
+                <div class="col-md-offset-3">
+                <span class="line"></span>
+                Sim 10 số <input type="radio" value="0" name="type" />
+               Sim 11 số <input type="radio" value="1" name="type" />
+                </div>
+   </div>
+   <br />
+   <input type="hidden" name="submit" value="true" />
+   </form>
+   
+
+   
+  </div>
+</div>
+<div class="panel panel-success hidden-xs">
+
+  <div class="panel-body">
+
+
+  </div>
+</div>
+

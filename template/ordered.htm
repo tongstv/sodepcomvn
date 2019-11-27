@@ -1,0 +1,186 @@
+<script src="/apps/js/jquery.min.js"></script>
+<link rel="stylesheet" href="{$thisdomain}/apps/css/chosen.css">
+
+<script src="{$thisdomain}/apps/js/chosen.js"></script>
+<div class="panel-fix">
+  <div class="panel-heading">
+    <h1 class="panel-title">Đặt mua sim số đẹp {if isset($smarty.get.sosim)}{$smarty.get.sosim}{/if}</h1>
+  </div>
+  <div class="panel-body">
+      <form class="form-horizontal" method="POST" id="ordered" action="index.php?do=ordered.done" onsubmit="return checkorder()">
+   <table class="table table-condensed table-bordered" >
+   <thead>
+   <tr>
+    <th class="active text-center col-md-1">STT</th>
+     <th class="active text-center">Số sim</th>
+      <th class="active text-center">Giá tiền</th>
+      {if isset($mycart)}
+      <th class="active"></th>
+      {/if}
+   </tr>
+   </thead>
+   
+   {section name=d loop=$data}
+   {$row=$data[d]}
+   <tr>
+   
+   <td class="center">
+   
+   <input type="hidden" name="simdlx[{$row.sim1}]" value="{$row.simdl}" />
+   <input type="hidden" name="sim[{$row.sim1}]" value="{($row.giaban*1000000)}" />
+   {$smarty.section.d.index+1}</td>
+   <td class="text-center"><strong style="font-size: 16px;">{$row.sim1}</strong></td>
+   <td class="text-center">{($row.giaban*1000000)|number_format} vnđ<br /> ({$row.doctien})</td>
+
+   <td class="text-center"><a href="javascript://" class="delcart" data-sim="{$row.sim2}"> <i class="glyphicon glyphicon-trash text-danger"></i></a></td>
+ 
+   </tr>
+   {/section}
+   {if isset($mycart) }
+    <tr>
+    <td colspan="2" class="text-center">   <strong>Tổng tiền</strong> </td>
+     <td colspan="2" class="text-center">  {if isset($tt)}<span id="total"><strong>{($tt*1000000)|number_format}</strong></span> <strong>VNĐ</strong> <strong class="doifont">( {$ttdoctien} )</strong></td>{/if}
+
+    </tr>
+    {/if}
+   </table>
+   
+
+   <div class="row">
+   <div class="col-md-8">
+
+   
+   <div class="form-group ">
+   <label class="control-label col-md-4">Họ và tên: <span class="red">(*)</span></label>
+   <div class="col-md-7">
+   <input name="fullname" class="form-control input-lg" required="" />
+   </div>
+   </div>
+   
+      <div class="form-group ">
+   <label class="control-label col-md-4">Điện thoại: <span class="red">(*)</span></label>
+   <div class="col-md-7">
+   <input name="phone" type="tel" class="form-control input-lg" required="" />
+   </div>
+   </div>
+   
+      <div class="form-group hidden-xs">
+   <label class="control-label col-md-4">Tỉnh/TP: <span class="red">(*)</span></label>
+   <div class="col-md-7">
+  <input type="hidden" name="city" />
+
+   <select id="city" class="form-control city input-lg">
+   <option value="0">Chọn Tỉnh/TP</option>
+   {html_options options=$city}
+   </select>
+   </div>
+   </div>
+   
+         <div class="form-group ">
+   <label class="control-label col-md-4">Địa chỉ: <span class="red">(*)</span></label>
+   
+   <div class="col-md-7">
+
+    <textarea name="address" class="form-control"></textarea>
+   </div>
+   </div>
+   
+   
+
+   
+      <div class="form-group hidden-xs ">
+   <label class="control-label col-md-4">Ghi chú:</label>
+   <div class="col-md-7">
+   <textarea class="form-control" name="note" style="height: 50px;"></textarea>
+  
+   </div>
+   </div>
+   
+   
+   <div class="form-group ">
+   <div class="col-md-12">
+        <div class="text-center">
+           <button name="submit" class="btn btn-success btn-lg">Đặt mua</button>  <button type="reset" class="btn btn-danger btn-lg">Làm lại</button>
+    </div>
+   </div>
+   </div>
+
+   </form>
+   </div>
+   <div class="col-md-4 hidden-xs">{if isset($goimua.detail)}
+{$goimua.detail}
+{/if}</div>
+   
+  
+   
+    </div>   
+
+  </div>
+</div>
+
+
+{if isset($datmua.detail)}
+<div class="panel-fix">
+  <div class="panel-heading">
+    <h2 class="panel-title">{$datmua.title}</h2>
+  </div>
+  <div class="panel-body">
+  {$datmua.detail}
+  </div>
+</div>
+{/if}
+
+
+
+        <script>
+                    $(function(){
+                       
+                        $("#city").change(function(){
+                            index=$(this).find('option:selected').val();
+                            $(".district").remove();
+                            $(".se1").remove();
+                            $.get('{$thisdomain}/index.php?ajax=city.getdistrict&id='+index).done(function(data){
+                           
+                         
+                             
+                            });
+                            
+                            city=$("#city").find('option:selected').text();
+                            $("input[name='city']").val(city);
+                            
+                        });
+                        
+                        if($(window).width() < 600)
+                        {
+                            $("input[name='city']").val('Mobile');
+                            
+                            
+                        }
+                        $(document).on('change','.district',function(){
+                             index=$(this).find('option:selected').val();
+                            $(".se2").remove();
+                            $.get('{$thisdomain}/index.php?ajax=city.getward&id='+index).done(function(data){
+                           
+                              $(".district").parents('.form-group').after(data);
+                            
+                    
+                            });
+                            qh=$(".se1").find('option:selected').text();
+                            $("input[name='qh']").val(qh);
+                        });
+                      
+                      
+                      
+                      
+                                 $(document).on('change','.ward',function(){
+                           
+                            px=$(".se2").find('option:selected').text();
+                            $("input[name='px']").val(px);
+                        });
+                        
+                        
+                         $(".city").chosen({ search_contains: true, width: "100%" });
+                    })
+                  
+               </script>
+               
